@@ -11,8 +11,9 @@ def pre_init_hook(env):
     :param cr: database cursor
     :return: void
     """
-    env.cr.execute(
-        "UPDATE product_product "
-        "SET default_code = '!!mig!!' || id "
-        "WHERE default_code IS NULL OR default_code = '/';"
-    )
+    # Quatra: disabled (issue-10267)
+    # env.cr.execute(
+    #     "UPDATE product_product "
+    #     "SET default_code = '!!mig!!' || id "
+    #     "WHERE default_code IS NULL OR default_code = '/';"
+    # )
